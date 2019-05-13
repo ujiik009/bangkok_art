@@ -1,0 +1,91 @@
+<ion-content>
+
+  <img class="coverImg" src="{{data.place_imgs[0]}}" />
+  {{message}}
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button color="light" (click)="back()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div style="padding-left: 5px;padding-right: 5px;">
+    <div>
+      <h5>{{data.name}}</h5>
+      <h6>{{data.name_en}}</h6>
+    </div>
+    <div>
+      <!-- BTN -->
+      <ion-row>
+        <ion-col style="text-align: center">
+          <ion-icon name="pin" class="icon-btn" color="{{check_in_color}}" (click)="checkin(data)"></ion-icon>
+          <p class="text-icon">CHECK-IN</p>
+        </ion-col>
+        <ion-col style="text-align: center">
+          <ion-icon name="md-done-all" color="{{been_in_color}}" class="icon-btn"></ion-icon>
+          <p class="text-icon">BEEN-IN</p>
+        </ion-col>
+        <ion-col style="text-align: center">
+          <ion-icon name="heart" color="{{favorite_color}}" class="icon-btn" (click)="favorite(data)"></ion-icon>
+          <p class="text-icon">FAVORITE</p>
+        </ion-col>
+        <ion-col style="text-align: center">
+          <ion-icon name="md-share" class="icon-btn" (click)="sharing(data)"></ion-icon>
+          <p class="text-icon">SHARE</p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div>
+      <!-- content -->
+      <ion-label style="text-decoration: underline;"> ข้อมูลเบิ่องต้น</ion-label>
+      <p style="font-size:12px">{{data.place_descriptions}}</p>
+      <ion-label style="text-decoration: underline;">ช่องทางการติดต่อ</ion-label>
+      <p style="font-size:12px">
+        ที่อยู่ : {{data.address}}<br />
+        เบอร์โทรศัพท์ : {{data.phone}}<br />
+        อีเมล : {{data.email}}
+      </p>
+      <div class="group-btn">
+        <ion-button style="width:50vh;color:black" size="small" color="warning" (click)="navigator(data.lat,data.lng)">
+          <span>Map</span>
+          <ion-icon name="map"></ion-icon>
+        </ion-button>
+      </div>
+
+      <hr />
+
+      Comments
+
+      <ion-list>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img onerror="this.src='assets/img/default.png'" src="{{pathimgNocatch(meta.avatar)}}">
+          </ion-avatar>
+          <ion-input placeholder="พิมพ์ความคิดเห็น" [(ngModel)]="commentData.user_comment"></ion-input>
+          <ion-button size="small" color="light" (click)="post()">
+            <ion-icon name="send"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item *ngFor="let comment of commentList">
+          <ion-avatar slot="start">
+            <img onerror="this.src='assets/img/default.png'" src="{{comment.user_avatar}}">
+          </ion-avatar>
+          <ion-label>
+            <h3>
+              {{comment.user_display}}
+              <p><span class="time-d-p">{{convTime(comment.user_comment_time)}}</span></p>
+            </h3>
+            <p>{{comment.user_comment}}</p>
+          </ion-label>
+
+        </ion-item>
+      </ion-list>
+
+    </div>
+  </div>
+
+</ion-content>
+<style>
+
+</style>

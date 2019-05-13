@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-title>Your Checkin</ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let place of checkinList">
+    <div > 
+      <ion-card-header>
+          <div align="right">
+              <ion-icon class="btn-close" (click)="delete(place.id)" name="close" slot="end"></ion-icon>
+          </div>
+        <img src="{{place.place_imgs[0]}}" style="height: 30vh;width: 100vh" />
+        <ion-card-subtitle>{{place.name}}</ion-card-subtitle>
+        <ion-card-subtitle>{{place.name_en}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content style="font-size:12px">
+        <p>วันให้บริการ : {{place.open_detail}}</p>
+        <p>เวลา : {{place.open_time}}-{{place.close_time}}</p>
+      </ion-card-content>
+    </div>
+
+  </ion-card>
+</ion-content>

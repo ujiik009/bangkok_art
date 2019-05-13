@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar mode="md" class="new-background-color">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title slot="start">
+      <ion-img src="/assets/img/logomini.png" pading></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="top">
+      <ion-tab-button tab="news">
+        <ion-label translate [translateParams]="{ lang: language }">menu.news</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="events">
+        <ion-label translate [translateParams]="{ lang: language }">menu.event</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="place">
+        <ion-label translate [translateParams]="{ lang: language }">menu.place</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

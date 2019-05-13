@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-title>Sign Up</ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div align="center">
+    <ion-avatar (click)="selectFile()" style="height: 90px;width: 90px;">
+      <img src="{{pathImg}}" id="avatar" style="text-align: center">
+    </ion-avatar>
+  </div>
+
+
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input [(ngModel)]="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Dispaly Name</ion-label>
+    <ion-input [(ngModel)]="displayName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Phone Number</ion-label>
+    <ion-input [(ngModel)]="phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Password</ion-label>
+    <ion-input [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Confirm Password</ion-label>
+    <ion-input [(ngModel)]="confirmPassword" type="password"></ion-input>
+  </ion-item>
+
+  <div class="btn-box">
+    <ion-button style="width: 130px" color="warning" size="small" (click)="signUp()" class="finish">
+      Finish
+    </ion-button>
+  </div>
+
+
+</ion-content>

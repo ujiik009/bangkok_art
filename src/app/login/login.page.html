@@ -1,0 +1,32 @@
+<ion-header>
+
+</ion-header>
+<ion-content>
+  <div class="main">
+
+    <!-- logo -->
+    <ion-img src="/assets/img/logo.png"></ion-img>
+
+    <!-- form login box -->
+    <div style="margin-top:-100px;font-weight: 300">
+
+
+      <div class="login-box">
+        <!-- labal -->
+        <p style="text-align: center"><strong>Login with you e-mail</strong></p>
+        <!-- email -->
+        <ion-input placeholder="E-mail" type="email" [(ngModel)]="user.email"></ion-input>
+        <!-- password -->
+        <ion-input placeholder="Password" type="password" [(ngModel)]="user.password"></ion-input>
+      </div>
+
+      <div class="btn-box">
+          <ion-button style="width: 130px" color="warning" (click)="login()" size="small">Login</ion-button>
+          <p>---------- or ----------</p>
+          <p style="cursor: pointer;" (click)="goSignUp()">Sign up</p>
+      </div>
+
+    </div>
+    <!-- form login box -->
+  </div>
+</ion-content>

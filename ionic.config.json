@@ -1,5 +1,7 @@
 {
   "name": "bangkok_art",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

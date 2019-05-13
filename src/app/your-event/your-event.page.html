@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-title>Your Event</ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let event of events">
+      
+    <ion-card-header>
+      <div align="right">
+          <ion-icon class="btn-close" (click)="delete(event.id)" name="close" slot="end"></ion-icon>
+      </div>
+        
+      <img src="{{event.event_imgs[0]}}" style="height: 30vh;width: 100vh" />
+      <ion-card-subtitle>{{event.event_name}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content style="font-size:12px" [innerHTML]="event.event_descriptions">
+   
+    </ion-card-content>
+  </ion-card>
+</ion-content>

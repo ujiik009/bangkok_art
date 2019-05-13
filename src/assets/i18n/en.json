@@ -1,0 +1,17 @@
+{
+    "tab1": {
+      "tabName": "Tab One"
+    },
+    "menu":{
+        "news":"NEWS",
+        "event":"EVENTS",
+        "place":"PLACE",
+        "search":"SEARCH",
+        "profile":"PROFILE"
+    },
+    "event":{
+      "current_event":"CURRENT EVENTS",
+      "JOIN_THIS_EVENT":"JOIN THIS EVENT"
+    }
+
+  }

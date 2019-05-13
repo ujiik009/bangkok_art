@@ -1,22 +1,46 @@
 <ion-app>
   <ion-split-pane>
-    <ion-menu>
+    <ion-menu side="end">
       <ion-header>
-        <ion-toolbar>
-          <ion-title>Menu</ion-title>
+        <ion-toolbar mode="md"  class="new-background-color">
+          <!-- <ion-title>Menu {{counter}}</ion-title> -->
         </ion-toolbar>
       </ion-header>
       <ion-content>
         <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>
-                {{p.title}}
-              </ion-label>
+          <ion-menu-toggle auto-hide="false">
+            <!-- event -->
+            <ion-item  (click)="profile()">
+              <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
+              <ion-label>{{translations[language].menu.profile}}</ion-label>
             </ion-item>
           </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <!-- event -->
+            <ion-item routerDirection="forward" routerLink="/tabs/events" >
+              <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>
+             
+              <ion-label>{{translations[language].menu.event}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <!-- what'is new -->
+            <ion-item routerDirection="forward" routerLink="/tabs/news" >
+              <ion-icon name="paper"></ion-icon>
+              <ion-label>{{translations[language].menu.news}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+              <!-- what'is new -->
+              <ion-item routerDirection="forward" routerLink="/tabs/place" >
+                  <ion-icon name="map"></ion-icon>
+                <ion-label>{{translations[language].menu.place}}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+
         </ion-list>
+        <ion-button  (click)="changeLang('th')">Thai</ion-button>
+        <ion-button  (click)="changeLang('en')">Eng</ion-button>       
       </ion-content>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
