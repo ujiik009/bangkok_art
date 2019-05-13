@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core'; // add this
 import { IonicModule } from '@ionic/angular';
+import {LimitWordPipe} from '../limit-word.pipe'
 
 
 import { NewsPage } from './news.page';
@@ -23,6 +24,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     TranslateModule.forChild() // add this
   ],
-  declarations: [NewsPage]
+  declarations: [NewsPage,LimitWordPipe]
 })
 export class NewsPageModule {}

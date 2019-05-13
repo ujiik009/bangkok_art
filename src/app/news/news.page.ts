@@ -3,6 +3,8 @@ import { TranslateService } from '@ngx-translate/core'; // 1
 import * as firebase from 'firebase'
 import {HelperService} from '../helper.service'
 import * as moment from 'moment'
+import { Router, NavigationExtras } from '@angular/router';
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.page.html',
@@ -11,7 +13,7 @@ import * as moment from 'moment'
 export class NewsPage implements OnInit {
   news=[]
   language: string = this.translateService.currentLang; // 2 
-  constructor(private translateService:TranslateService,private helperService:HelperService) { }
+  constructor(private translateService:TranslateService,private helperService:HelperService,private router:Router) { }
 
   
   ngOnInit() {
@@ -38,6 +40,18 @@ export class NewsPage implements OnInit {
 
   convDate(timeStamp){
     return moment(timeStamp).format("DD-MM-YYYY")
+  }
+
+  detail(detail){
+    
+    let navigationExtras: NavigationExtras = {
+      state: {
+        detail: detail
+      }
+    };
+    this.router.navigate(['news-detail'], navigationExtras);
+    
+    
   }
 
 }

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <img class="coverImg" src="{{data.new_imgs[0]}}" />
+  <div>
+    <h3>{{data.title}}</h3>
+  </div>
+  <div>
+    <!-- content -->
+    {{data.news_detail}}
+  </div>
+  <div>
+    <p>
+      วันที่ : {{convDate(data.start)}} : {{convDate(data.end)}}
+    </p>
+    <p>
+      สถานที่ : {{data.location}}
+    </p>
+  </div>
+</ion-content>

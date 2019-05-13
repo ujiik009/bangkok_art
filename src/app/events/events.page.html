@@ -11,7 +11,9 @@
       <ion-card-subtitle>{{event.event_name}}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content style="font-size:12px">
-      {{event.event_descriptions | limitWord : 150}}
+      <!-- {{event.event_descriptions | limitWord : 150}} -->
+      <p>วันที่ : {{displayDate(event.event_start)}} - {{displayDate(event.event_end)}} </p>
+      <p>สถานที่ : {{event.location_detail}}</p>
     </ion-card-content>
     <ion-button expand="block" color="warning" size="small" translate [translateParams]="{ lang: language }" (click)="join_event(event)">event.JOIN_THIS_EVENT</ion-button>
   </ion-card>

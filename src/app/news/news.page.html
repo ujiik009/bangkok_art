@@ -6,18 +6,18 @@
   </ion-refresher>
   <!-- event list -->
   <ion-card *ngFor="let new of news">
-    <ion-card-header>
+    <ion-card-header (click)="detail(new)">
       <img src="{{new.new_imgs[0]}}" style="height: 30vh;width: 100vh" />
-      <ion-card-subtitle>{{new.title}}</ion-card-subtitle>
+      <ion-card-subtitle><h3 style="padding-left: 10px;">{{new.title}}</h3></ion-card-subtitle>
     </ion-card-header>
     <ion-card-content style="font-size:12px">
-      <!-- {{new.news_detail}} -->
-      <p>
+      {{new.news_detail | limitWord:100}}
+      <!-- <p>
         วันที่ : {{convDate(new.start)}} : {{convDate(new.end)}}
       </p>
       <p>
         สถานที่ : {{new.location}}
-      </p>
+      </p> -->
     </ion-card-content>
    
   </ion-card>

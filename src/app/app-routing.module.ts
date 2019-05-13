@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'your-event', loadChildren: './your-event/your-event.module#YourEventPageModule' },
   { path: 'your-favorite', loadChildren: './your-favorite/your-favorite.module#YourFavoritePageModule' },
   { path: 'your-checkin', loadChildren: './your-checkin/your-checkin.module#YourCheckinPageModule' },
+  { path: 'news-detail', loadChildren: './news-detail/news-detail.module#NewsDetailPageModule' },
   // { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
   // { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
   // { path: 'place', loadChildren: './place/place.module#PlacePageModule' },

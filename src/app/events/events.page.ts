@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { Storage } from '@ionic/storage';
 import { TranslateService } from '@ngx-translate/core'; // 1
+import * as moment from 'moment'
 @Component({
   selector: 'app-events',
   templateUrl: './events.page.html',
@@ -75,6 +76,10 @@ export class EventsPage implements OnInit {
         console.log(error);
 
       })
+  }
+
+  displayDate(timestamp){
+    return moment(timestamp).format("DD-MMM-YYYY")
   }
 
 }
