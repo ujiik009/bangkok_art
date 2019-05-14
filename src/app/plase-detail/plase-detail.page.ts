@@ -60,9 +60,6 @@ export class PlaseDetailPage implements OnInit {
         this.data = this.router.getCurrentNavigation().extras.state.detail;
       }
     });
-
-
-
   }
 
 

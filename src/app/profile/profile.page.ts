@@ -37,8 +37,7 @@ export class ProfilePage implements OnInit {
 
 
   async selectFile() {
-    console.log(this.meta);
-
+  
     let options: ImagePickerOptions = {
       //here Quality of images, defaults to 100  
       quality: 100,
@@ -62,7 +61,6 @@ export class ProfilePage implements OnInit {
 
       if (results.length > 0) {
         // it mean have image
-
         let base64 = 'data:image/jpeg;base64,' + results[0]
         firebase.storage().ref("avatar/" + this.meta.uid + ".jpg").putString(base64, 'data_url')
           .then(() => {
@@ -72,7 +70,6 @@ export class ProfilePage implements OnInit {
           .catch((err) => {
             alert(err)
           })
-
       }
       // for (var i = 0; i < results.length; i++) {
       //     // console.log('Image URI: ' + results[i]);

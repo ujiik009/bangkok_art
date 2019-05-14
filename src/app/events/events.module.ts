@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { EventsPage } from './events.page';
 import { TranslateModule } from '@ngx-translate/core'; // add this
-import {LimitWordPipe} from '../limit-word.pipe'
+// import {LimitWordPipe} from '../limit-word.pipe'
 
 const routes: Routes = [
   {
@@ -25,6 +25,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     TranslateModule.forChild()
   ],
-  declarations: [EventsPage,LimitWordPipe]
+  declarations: [EventsPage]
 })
 export class EventsPageModule {}
