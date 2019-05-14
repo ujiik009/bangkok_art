@@ -1,6 +1,13 @@
 <ion-content>
-
   <img class="coverImg" src="{{data.place_imgs[0]}}" />
+  <div style="display: flex;padding:0 0px">
+    <img onerror="this.src='assets/img/img-not-found.png'" src="{{data.place_imgs[1]}}" class="img"
+       />
+    <img onerror="this.src='assets/img/img-not-found.png'" src="{{data.place_imgs[2]}}" class="img"
+      />
+    <img onerror="this.src='assets/img/img-not-found.png'" src="{{data.place_imgs[3]}}" class="img"
+       />
+  </div>
   {{message}}
   <ion-fab vertical="top" horizontal="start" slot="fixed">
     <ion-fab-button color="light" (click)="back()">
