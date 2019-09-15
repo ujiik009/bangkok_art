@@ -4,15 +4,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'tabs',
     pathMatch: 'full'
   },
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  },
-  { 
-    path: 'login', loadChildren: './login/login.module#LoginPageModule' 
   },
   { path: 'sign-up', loadChildren: './sign-up/sign-up.module#SignUpPageModule' },
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
@@ -22,6 +19,8 @@ const routes: Routes = [
   { path: 'your-favorite', loadChildren: './your-favorite/your-favorite.module#YourFavoritePageModule' },
   { path: 'your-checkin', loadChildren: './your-checkin/your-checkin.module#YourCheckinPageModule' },
   { path: 'news-detail', loadChildren: './news-detail/news-detail.module#NewsDetailPageModule' },
+  { path: 'one-day-trip', loadChildren: './one-day-trip/one-day-trip.module#OneDayTripPageModule' },
+  { path: 'one-day-trip-detail', loadChildren: './one-day-trip-detail/one-day-trip-detail.module#OneDayTripDetailPageModule' },
   // { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
   // { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
   // { path: 'place', loadChildren: './place/place.module#PlacePageModule' },

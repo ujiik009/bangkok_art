@@ -36,53 +36,10 @@ export class ProfilePage implements OnInit {
   }
 
 
-  async selectFile() {
-  
-    let options: ImagePickerOptions = {
-      //here Quality of images, defaults to 100  
-      quality: 100,
-      //here Width of an Image  
-      width: 600,
-      //here Height of an Image  
-      height: 600,
-      /** Output type, defaults to 0 (FILE_URI). 
-
-      * FILE_URI :0 (number) it returns a actual path for an image 
-
-      */
-      //DATA_URI: 1(number) it returns a base64 data  
-      //for an image  
-      outputType: 1
-      //here Maximum image count for selection, defaults to 15.  
-      //maximumImagesCount: 15(1 - 15) numbers  
-      //while setting a number 15 we can load 15 images in one selection.  
-    };
-    this.imagePicker.getPictures(options).then((results) => {
-
-      if (results.length > 0) {
-        // it mean have image
-        let base64 = 'data:image/jpeg;base64,' + results[0]
-        firebase.storage().ref("avatar/" + this.meta.uid + ".jpg").putString(base64, 'data_url')
-          .then(() => {
-            this.pathImg = base64
-            alert("Change Photo Profile Completed!!")
-          })
-          .catch((err) => {
-            alert(err)
-          })
-      }
-      // for (var i = 0; i < results.length; i++) {
-      //     // console.log('Image URI: ' + results[i]);
-      //     alert('Image URI: ' + results[i])
-      // }
-    }, (err) => { alert('Image URI: Error ' + err) });
-  }
-
 
 
   async ionViewWillEnter() {
-    this.meta = await this.storage.get("meta")
-    this.pathImg = this.meta.avatar + "&time=" + new Date().getTime()
+    
     this.getFavorite()
     this.getCheckIn()
     this.getEvent()
@@ -91,7 +48,7 @@ export class ProfilePage implements OnInit {
 
 
   back() {
-    this.router.navigateByUrl("tabs/news")
+    this.router.navigateByUrl("")
   }
 
   getFavorite() {

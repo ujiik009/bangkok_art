@@ -7,7 +7,8 @@
         "event":"เหตุการณ์",
         "place":"สถานที่",
         "search":"ค้นหา",
-        "profile":"ข้อมูลส่วนตัว"
+        "profile":"ข้อมูลส่วนตัว",
+        "one_day_trip":"ONE DAY TRIP"
     },
     "event":{
       "current_event":"เหตุการณ์ ตอนนี้",

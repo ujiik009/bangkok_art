@@ -4,14 +4,14 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: "AIzaSyCZdqJ9SBJ7O6eDbWJNyUN8ItYXOG4co-o",
-    authDomain: "bangkok-arts.firebaseapp.com",
-    databaseURL: "https://bangkok-arts.firebaseio.com",
-    projectId: "bangkok-arts",
-    storageBucket: "bangkok-arts.appspot.com",
-    messagingSenderId: "517795092238",
-    appId: "1:517795092238:web:905e7b0b20b69485"
+  firebase:  {
+    apiKey: "AIzaSyDm1Uta6UWREpicjLNH-pBJO5pvZBtJB9I",
+    authDomain: "freelance-86d79.firebaseapp.com",
+    databaseURL: "https://freelance-86d79.firebaseio.com",
+    projectId: "freelance-86d79",
+    storageBucket: "freelance-86d79.appspot.com",
+    messagingSenderId: "177593038628",
+    appId: "1:177593038628:web:845918be1b076d68"
   }
 };
 

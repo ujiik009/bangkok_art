@@ -3,10 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from "@angular/common";
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator/ngx';
 import { Storage } from '@ionic/storage';
-import * as firebase from "firebase"
 import { HelperService } from '../helper.service'
 import * as moment from "moment"
-import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 
 @Component({
@@ -34,16 +32,6 @@ export class PlaseDetailPage implements OnInit {
   data: any;
   meta: any = {}
 
-  commentData: any = {
-    user_comment: "",
-    user_display: "",
-    user_id: "",
-    user_avatar: "",
-    user_comment_time: new Date().getTime()
-  }
-
-  commentList = []
-
 
   firebaseRef: any
   constructor(
@@ -52,8 +40,7 @@ export class PlaseDetailPage implements OnInit {
     private location: Location,
     private launchNavigator: LaunchNavigator,
     private storage: Storage,
-    private helperService: HelperService,
-    private socialSharing: SocialSharing
+    private helperService: HelperService
   ) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
@@ -68,11 +55,7 @@ export class PlaseDetailPage implements OnInit {
     var meta = await this.storage.get("meta")
     this.meta = meta
 
-    this.firebaseRef = firebase.database().ref("place/" + this.data.id + "/comments")
-
-    this.firebaseRef.on('value', (snapShot) => {
-      this.commentList = this.helperService.snapshotToArray(snapShot.val())
-    })
+  
 
   }
 
@@ -132,24 +115,7 @@ export class PlaseDetailPage implements OnInit {
     }
   }
 
-  post() {
-
-    this.firebaseRef = firebase.database().ref("place/" + this.data.id + "/comments")
-
-    this.commentData.user_id = this.meta.uid
-    this.commentData.user_display = this.meta.display_name
-    this.commentData.user_avatar = this.meta.avatar+"&time="+new Date().getTime()
-    this.commentData.user_comment_time = new Date().getTime()
-
-    this.firebaseRef.push(this.commentData, err => console.log(err ? 'error while pushing' : 'successful push')).then(() => {
-      this.commentData.user_comment = ""
-      alert("แสดงความเห็นเสร็จสิ้น")
-
-
-    }).catch((error) => {
-      alert("เกิดข้อผิดพลาด :" + error)
-    })
-  }
+ 
 
 
   convTime(timeStamp) {
@@ -174,12 +140,7 @@ export class PlaseDetailPage implements OnInit {
     })
   }
 
-  async sharing(data) {
-    this.socialSharing.shareViaFacebookWithPasteMessageHint(data.name,data.place_imgs[0],null,data.name)
-    .catch((err)=>{
-      alert(err)
-    })
-  }
+
 
   pathimgNocatch(path){
     

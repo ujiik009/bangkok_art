@@ -22,7 +22,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
-import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+
 
 // manu component
 
@@ -60,7 +60,7 @@ firebase.initializeApp(environment.firebase);
     SplashScreen,
     AuthenticationService,
     ImagePicker,
-    SocialSharing,
+    
     File,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

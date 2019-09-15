@@ -22,6 +22,16 @@ const routes: Routes = [
             ]
         },
         {
+          path: 'one_day_trip',
+          children:
+            [
+              {
+                path: '',
+                loadChildren: '../one-day-trip/one-day-trip.module#OneDayTripPageModule'
+              }
+            ]
+        },
+        {
           path: 'events',
           children:
             [
@@ -43,14 +53,14 @@ const routes: Routes = [
         },
         {
           path: '',
-          redirectTo: '/tabs/news',
+          redirectTo: '/tabs/place',
           pathMatch: 'full'
         }
       ]
   },
   {
     path: '',
-    redirectTo: '/tabs/news',
+    redirectTo: '/tabs/place',
     pathMatch: 'full'
   }
 ];
