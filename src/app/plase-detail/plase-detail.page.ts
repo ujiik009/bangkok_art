@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router ,NavigationExtras } from '@angular/router';
 import { Location } from "@angular/common";
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator/ngx';
 import { Storage } from '@ionic/storage';
@@ -141,9 +141,20 @@ export class PlaseDetailPage implements OnInit {
   }
 
 
+  previewImageSlide (active){
+    let navigationExtras: NavigationExtras = {
+      state: {
+        detail: {
+          active:active,
+          image:this.data.place_imgs
+        }
+      }
+    };
+    this.router.navigate(['image-slides'], navigationExtras);
+  
+  }
 
   pathimgNocatch(path){
-    
     return path 
     // return path+"&time="+new Date().getTime()
   }

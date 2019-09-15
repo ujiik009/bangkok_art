@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+;
 import { Location } from "@angular/common";
+import { NavigationExtras, Router ,ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-one-day-trip-detail',
   templateUrl: './one-day-trip-detail.page.html',
@@ -23,6 +24,19 @@ export class OneDayTripDetailPage implements OnInit {
 
   back() {
     this.location.back();
+  }
+
+  previewImageSlide (active,image){
+    let navigationExtras: NavigationExtras = {
+      state: {
+        detail: {
+          active:active,
+          image:image
+        }
+      }
+    };
+    this.router.navigate(['image-slides'], navigationExtras);
+  
   }
 
 }

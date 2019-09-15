@@ -1,0 +1,14 @@
+<ion-content >
+  <div id="slied-box">
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let image of data.image">
+        <img [src]="image" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button color="light" (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>

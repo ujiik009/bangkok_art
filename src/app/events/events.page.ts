@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { Storage } from '@ionic/storage';
+import { NavigationExtras, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core'; // 1
 import * as moment from 'moment'
 @Component({
@@ -12,7 +13,7 @@ export class EventsPage implements OnInit {
 
   eventList = []
 
-  constructor(private storage:Storage,private translateService:TranslateService) { }
+  constructor(private storage: Storage, private translateService: TranslateService, private router: Router, ) { }
 
   language: string = this.translateService.currentLang; // 2 
   ngOnInit(): void {
@@ -50,7 +51,7 @@ export class EventsPage implements OnInit {
       .then(dataSnapshot => {
         this.eventList = this.snapshotToArray(dataSnapshot.val())
       })
-      .finally(()=>{
+      .finally(() => {
         ref = null
       })
   }
@@ -70,7 +71,7 @@ export class EventsPage implements OnInit {
   join_event(data) {
     this.storage.set("event-" + data.id, data)
       .then(async () => {
-      alert("The event has been save successfully.")
+        alert("The event has been save successfully.")
       })
       .catch((error) => {
         console.log(error);
@@ -78,8 +79,21 @@ export class EventsPage implements OnInit {
       })
   }
 
-  displayDate(timestamp){
+  displayDate(timestamp) {
     return moment(timestamp).format("DD-MMM-YYYY")
+  }
+
+  previewImageSlide(active, image) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        detail: {
+          active: active,
+          image: image
+        }
+      }
+    };
+    this.router.navigate(['image-slides'], navigationExtras);
+
   }
 
 }

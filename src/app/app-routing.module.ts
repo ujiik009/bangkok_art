@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'news-detail', loadChildren: './news-detail/news-detail.module#NewsDetailPageModule' },
   { path: 'one-day-trip', loadChildren: './one-day-trip/one-day-trip.module#OneDayTripPageModule' },
   { path: 'one-day-trip-detail', loadChildren: './one-day-trip-detail/one-day-trip-detail.module#OneDayTripDetailPageModule' },
+  { path: 'image-slides', loadChildren: './image-slides/image-slides.module#ImageSlidesPageModule' },
   // { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
   // { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
   // { path: 'place', loadChildren: './place/place.module#PlacePageModule' },

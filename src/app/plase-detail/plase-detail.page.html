@@ -1,9 +1,9 @@
 <ion-content>
-  <img class="coverImg" src="{{data.place_imgs[0]}}" />
+  <img class="coverImg" src="{{data.place_imgs[0]}}" (click)="previewImageSlide(0)"/>
   <div style="display: flex;padding:0 0px">
-    <img onerror="this.src='assets/img/img-not-found.png'" src="{{data.place_imgs[1]}}" class="img" />
-    <img onerror="this.src='assets/img/img-not-found.png'" src="{{data.place_imgs[2]}}" class="img" />
-    <img onerror="this.src='assets/img/img-not-found.png'" src="{{data.place_imgs[3]}}" class="img" />
+    <img onerror="this.src='assets/img/img-not-found.png'" src="{{data.place_imgs[1]}}" class="img" (click)="previewImageSlide(1)" />
+    <img onerror="this.src='assets/img/img-not-found.png'" src="{{data.place_imgs[2]}}" class="img" (click)="previewImageSlide(2)"/>
+    <img onerror="this.src='assets/img/img-not-found.png'" src="{{data.place_imgs[3]}}" class="img" (click)="previewImageSlide(3)"/>
   </div>
   {{message}}
   <ion-fab vertical="top" horizontal="start" slot="fixed">
