@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PlaseDetailPage } from './plase-detail.page';
-
+import {ReadmoreComponent} from "../readmore/readmore.component"
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PlaseDetailPage]
+  declarations: [PlaseDetailPage,ReadmoreComponent]
 })
 export class PlaseDetailPageModule {}

@@ -34,13 +34,14 @@
       </ion-row>
     </div>
     <div>
+    <!-- <app-readmore [detail]=data.highlight></app-readmore> -->
       <!-- content -->
-      <ion-label style="text-decoration: underline;"> ข้อมูลเบื้องต้น</ion-label>
-      <p style="font-size:16px">{{data.place_descriptions}}</p>
+      <!-- <ion-label style="text-decoration: underline;"> ข้อมูลเบื้องต้น</ion-label> -->
+      <!-- <p style="font-size:16px">{{data.place_descriptions}}</p> -->
       <!-- <p style="font-size:16px">จัดทำโดย {{data.who_owns}}</p> -->
       
       <ion-label style="text-decoration: underline;"> จุดเด่น</ion-label>
-      <p style="font-size:16px">{{data.highlight}}</p>
+      <app-readmore [detail]=data.highlight></app-readmore>
 
       <ion-label style="text-decoration: underline;">วันเวลาทำการ</ion-label>
       <p style="font-size:16px">
