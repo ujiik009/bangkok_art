@@ -9,7 +9,10 @@ export class ReadmoreComponent implements OnInit {
   @Input() detail: string;
   shot_detail:string
   more:boolean = false
-  constructor() { }
+  constructor() { 
+
+    
+  }
 
   ngOnInit() {
     if(this.detail.length > 100 ){
