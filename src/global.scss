@@ -11,13 +11,14 @@
 @import '~@ionic/angular/css/flex-utils.css';
 
 @font-face {
-    font-family: 'EkkamaiStandard Light';
-    src: url('./assets/font/EkkamaiStandard-Light.ttf');//mine
+    font-family: 'DBHelvethaicaXExtv3.2';
+    src: url('./assets/font/DBHelvethaicaXExtv3.2.ttf');//mine
    
   }
   
   * {
-    font-family: 'EkkamaiStandard Light';
+    font-family: 'DBHelvethaicaXExtv3.2';
+    letter-spacing: 1.5px;
   }
 
 .new-background-color{
