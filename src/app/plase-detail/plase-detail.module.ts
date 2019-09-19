@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PlaseDetailPage } from './plase-detail.page';
-import {ReadmoreComponent} from "../readmore/readmore.component"
+import { ReadmoreComponent } from "../readmore/readmore.component"
 const routes: Routes = [
   {
     path: '',
@@ -19,8 +19,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    
+    RouterModule.forChild(routes),
+    
   ],
   declarations: [PlaseDetailPage,ReadmoreComponent]
 })
-export class PlaseDetailPageModule {}
+export class PlaseDetailPageModule { }

@@ -44,6 +44,7 @@ firebase.initializeApp(environment.firebase);
     AngularFireAuthModule,
     IonicStorageModule.forRoot(),
     HttpClientModule,
+    
     // ImagePicker,
     TranslateModule.forRoot({ // <--- add this
       loader: { // <--- add this 
