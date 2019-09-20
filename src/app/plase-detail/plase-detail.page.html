@@ -43,6 +43,10 @@
       <!-- <ion-label style="text-decoration: underline;"> จุดเด่น</ion-label> -->
       <app-readmore [detail]=data.highlight></app-readmore>
 
+      <ion-label style="text-decoration: underline;">รายละเอียดค่าใช้จ่ายในการเข้าชม</ion-label>
+      <p style="font-size:16px" [innerHTML]="data.price_detail">  
+        
+      </p>
       <ion-label style="text-decoration: underline;">วันเวลาทำการ</ion-label>
       <p style="font-size:16px">
         วันให้บริการ : {{data.open_detail}}<br />
