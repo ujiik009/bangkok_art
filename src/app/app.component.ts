@@ -83,6 +83,11 @@ export class AppComponent {
 
   }
 
+
+  onChangeLang($event: any){
+    this.changeLang($event.target.value)
+  }
+
   profile() {
     this.navController.navigateRoot('/profile')
   }

@@ -1,54 +1,24 @@
 <ion-app>
   <ion-split-pane>
-    <ion-menu side="end">
+    <!-- <ion-menu side="end">
       <ion-header>
         <ion-toolbar mode="md" class="new-background-color">
-          <!-- <ion-title>Menu {{counter}}</ion-title> -->
+      
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <ion-list>
-          <ion-menu-toggle auto-hide="false">
-            <!-- event -->
-            <ion-item (click)="profile()">
-              <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
-              <ion-label>{{translations[language].menu.profile}}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-          <ion-menu-toggle auto-hide="false">
-            <!-- event -->
-            <ion-item routerDirection="forward" routerLink="/tabs/events">
-              <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>
 
-              <ion-label>{{translations[language].menu.event}}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-          <ion-menu-toggle auto-hide="false">
-            <!-- what'is new -->
-            <ion-item routerDirection="forward" routerLink="/tabs/news">
-              <ion-icon name="paper"></ion-icon>
-              <ion-label>{{translations[language].menu.news}}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-          <ion-menu-toggle auto-hide="false">
-            <!-- what'is new -->
-            <ion-item routerDirection="forward" routerLink="/tabs/place">
-              <ion-icon name="map"></ion-icon>
-              <ion-label>{{translations[language].menu.place}}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-
-        </ion-list>
-        <ion-button (click)="changeLang('th')">Thai</ion-button>
-        <ion-button (click)="changeLang('en')">Eng</ion-button>
-        <ion-menu-toggle auto-hide="false">
-          <ion-item (click)="logout()">
-            <ion-label>Logout</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-
+          <ion-list>
+              <ion-item>
+                <ion-label>language</ion-label>
+                <ion-select placeholder="" (ionChange)="onChangeLang($event)">
+                  <ion-select-option  value="th">Thai</ion-select-option>
+                  <ion-select-option selected="true" value="en">Eng</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
       </ion-content>
-    </ion-menu>
+    </ion-menu> -->
     <ion-router-outlet main></ion-router-outlet>
   </ion-split-pane>
 </ion-app>
