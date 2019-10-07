@@ -8,12 +8,12 @@
   <ion-card *ngFor="let event of eventList">
     <ion-card-header>
       <img src="{{event.event_imgs[0]}}" style="height: 30vh;width: 100vh" (click)="previewImageSlide(0,event.event_imgs)"/>
-      <ion-card-subtitle style="font-size: 18px;">{{event.event_name}}</ion-card-subtitle>
+      <ion-card-subtitle style="font-size: 20px;">{{event.event_name}}</ion-card-subtitle>
     </ion-card-header>
-    <ion-card-content style="font-size:18px">
+    <ion-card-content style="font-size: 20px">
       <!-- {{event.event_descriptions | limitWord : 150}} -->
-      <p style="font-size:18px">วันที่ : {{displayDate(event.event_start)}} - {{displayDate(event.event_end)}} </p>
-      <p style="font-size:18px">สถานที่ : {{event.location_detail}}</p>
+      <p style="font-size: 20px">วันที่ : {{displayDate(event.event_start)}} - {{displayDate(event.event_end)}} </p>
+      <p style="font-size: 20px">สถานที่ : {{event.location_detail}}</p>
     </ion-card-content>
     <!-- <ion-button expand="block" color="warning" size="small" translate [translateParams]="{ lang: language }" (click)="join_event(event)">event.JOIN_THIS_EVENT</ion-button> -->
   </ion-card>

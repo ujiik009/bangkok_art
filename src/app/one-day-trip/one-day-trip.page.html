@@ -2,9 +2,9 @@
     <ion-card *ngFor="let trip of trips" (click)="detailTrip(trip)">
         <ion-card-header>
             <img src="{{trip.trip_img}}" style="height: 30vh;width: 100vh" />
-            <ion-card-title style="font-size: 18px;"> {{trip.trip_name}}</ion-card-title>
+            <ion-card-title style="font-size: 20px;"> {{trip.trip_name}}</ion-card-title>
         </ion-card-header>
-        <ion-card-content style="text-align: justify;font-size: 18px;">
+        <ion-card-content style="text-align: justify;font-size: 20px;">
             {{trip.trip_detail}}
         </ion-card-content>
     </ion-card>
