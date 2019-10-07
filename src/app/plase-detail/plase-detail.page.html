@@ -44,16 +44,16 @@
       <app-readmore [detail]=data.highlight></app-readmore>
 
       <ion-label style="text-decoration: underline;">รายละเอียดค่าใช้จ่ายในการเข้าชม</ion-label>
-      <p style="font-size:16px" [innerHTML]="data.price_detail">  
+      <p style="font-size:18px" [innerHTML]="data.price_detail">  
         
       </p>
       <ion-label style="text-decoration: underline;">วันเวลาทำการ</ion-label>
-      <p style="font-size:16px">
+      <p style="font-size:18px">
         วันให้บริการ : {{data.open_detail}}<br />
         เวลา : {{data.open_time}}-{{data.close_time}}<br />
       </p>
       <ion-label style="text-decoration: underline;">ช่องทางการติดต่อ</ion-label>
-      <p style="font-size:16px">
+      <p style="font-size:18px">
         ที่อยู่ : {{data.address}}<br />
         เบอร์โทรศัพท์ : {{data.phone}}<br />
         อีเมล : {{data.email}}
@@ -61,7 +61,7 @@
 
       <div class="group-btn">
         <ion-button style="width:50vh;color:black" size="small" color="warning" (click)="navigator(data.lat,data.lng)">
-          <span>Map</span>
+          <span style="font-size:18px">Map</span>
           <ion-icon name="map"></ion-icon>
         </ion-button>
       </div>
