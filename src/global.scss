@@ -9,15 +9,15 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
-
-@font-face {
-    font-family: 'DBHelvethaicaXExtv3.2';
-    src: url('./assets/font/DBHelvethaicaXExtv3.2.ttf');//mine
+@import url('https://fonts.googleapis.com/css?family=Prompt&display=swap');
+// @font-face {
+//     font-family: 'DBHelvethaicaXExtv3.2';
+//     src: url('./assets/font/DBHelvethaicaXExtv3.2.ttf');//mine
    
-  }
+//   }
   
   * {
-    font-family: 'DBHelvethaicaXExtv3.2';
+    font-family: 'Prompt', sans-serif;
     letter-spacing: 1.5px;
   }
 

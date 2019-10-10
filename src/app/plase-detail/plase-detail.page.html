@@ -13,8 +13,8 @@
   </ion-fab>
   <div style="padding-left: 5px;padding-right: 5px;">
     <div>
-      <h5>{{data.name}}</h5>
-      <h6>{{data.name_en}}</h6>
+      <div style="font-size: 22px; font-weight:bold">{{data.name}}</div>
+      <div style="font-size: 22px; font-weight:bold">{{data.name_en}}</div>
     </div>
     <div>
       <!-- BTN -->
@@ -43,17 +43,17 @@
       <!-- <ion-label style="text-decoration: underline;"> จุดเด่น</ion-label> -->
       <app-readmore [detail]=data.highlight></app-readmore>
 
-      <ion-label style="text-decoration: underline;">รายละเอียดค่าใช้จ่ายในการเข้าชม</ion-label>
-      <p style="font-size: 20px" [innerHTML]="data.price_detail">  
+      <ion-label style="text-decoration: underline;font-size: 22px; font-weight:bold ">รายละเอียดค่าใช้จ่ายในการเข้าชม</ion-label>
+      <p style="font-size: 22px" [innerHTML]="data.price_detail">  
         
       </p>
-      <ion-label style="text-decoration: underline;">วันเวลาทำการ</ion-label>
-      <p style="font-size: 20px">
+      <ion-label style="text-decoration: underline;font-size: 22px; font-weight:bold">วันเวลาทำการ</ion-label>
+      <p style="font-size: 22px">
         วันให้บริการ : {{data.open_detail}}<br />
         เวลา : {{data.open_time}}-{{data.close_time}}<br />
       </p>
-      <ion-label style="text-decoration: underline;">ช่องทางการติดต่อ</ion-label>
-      <p style="font-size: 20px">
+      <ion-label style="text-decoration: underline;font-size: 22px; font-weight:bold">ช่องทางการติดต่อ</ion-label>
+      <p style="font-size: 22px">
         ที่อยู่ : {{data.address}}<br />
         เบอร์โทรศัพท์ : {{data.phone}}<br />
         อีเมล : {{data.email}}
@@ -61,7 +61,7 @@
 
       <div class="group-btn">
         <ion-button style="width:50vh;color:black" size="small" color="warning" (click)="navigator(data.lat,data.lng)">
-          <span style="font-size: 20px">Map</span>
+          <span style="font-size: 22px">Map</span>
           <ion-icon name="map"></ion-icon>
         </ion-button>
       </div>
